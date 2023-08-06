@@ -1,4 +1,7 @@
-FROM nvidia/cuda:11.6.2-cudnn8-runtime-ubuntu20.04
+FROM nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu22.04
+
+# Prevent interactive prompts during apt-get
+ENV DEBIAN_FRONTEND="noninteractive"
 
 # Install dependenceis to add PPAs
 RUN apt-get update && \
@@ -11,7 +14,7 @@ RUN add-apt-repository ppa:deadsnakes/ppa
 
 # Install Python 3.9 and pip
 RUN apt-get update && \
-    apt-get install -y build-essential python-dev python3-dev python3.9-distutils python3.9-dev python3.9 curl && \
+    apt-get install -y build-essential python3-dev python3.9-distutils python3.9-dev python3.9 curl && \
     apt-get clean && \
     update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.9 1 && \
     curl https://bootstrap.pypa.io/get-pip.py | python3.9
@@ -25,10 +28,8 @@ WORKDIR /app
 # Copy your application files to the container
 COPY . .
 
-# TODO: Remove these lines once the pyworld build is fixed by them
-# RUN pip install numpy && \
-#     pip install Cython==0.29.36 && \
-#     pip install pyworld==0.3.2 --no-build-isolation
+# Install packages for pyworld
+RUN apt-get install -y libsndfile1 libssl3
 
 # Install python dependencies
 RUN pip install -r requirements.txt

@@ -2,7 +2,7 @@
     "name": "RVC Runtime",
   
     // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "image": "rvc-runtime:latest",
+    "image": "mangio-rvc-fork:latest",
   
     // Features to add to the dev container. More info: https://containers.dev/features.
     // "features": {},
@@ -29,5 +29,10 @@
   
     // "postCreateCommand": "yarn install"
   
-    "remoteUser": "root"
+    "remoteUser": "root",
+    "runArgs": [
+      "--runtime=nvidia",
+      "--gpus",
+      "all"
+    ]
   }

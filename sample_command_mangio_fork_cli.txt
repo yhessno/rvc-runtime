@@ -1,0 +1,1 @@
+Spongebob.pth audios/out.wav audios/spongebob_out.wav logs/added_IVF6717_Flat_nprobe_1_Spongebob_v2.index 0 8 harvest 120 3 0 1 0.78 0.33 false
