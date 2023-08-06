@@ -29,7 +29,7 @@ WORKDIR /app
 COPY . .
 
 # Install packages for pyworld
-RUN apt-get install -y libsndfile1 libssl3
+RUN apt-get install -y libsndfile1 libssl3 ffmpeg
 
 # Install python dependencies
 RUN pip install -r requirements.txt

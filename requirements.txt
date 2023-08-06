@@ -5,3 +5,8 @@ onnxruntime-gpu==1.14.1
 # onnx==1.14.0
 soundfile==0.12.1
 librosa==0.9.1
+fairseq==0.12.2
+ffmpeg-python==0.2.0
+praat-parselmouth==0.4.2
+torchcrepe==0.0.19
+faiss-cpu==1.7.2
