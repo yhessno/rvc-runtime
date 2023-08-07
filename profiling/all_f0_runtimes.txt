@@ -1,0 +1,9 @@
+hybrid: 0.3143293857574463 seconds
+rmvpe: 0.3991565704345703 seconds
+harvest: 0.4320058822631836 seconds
+pm: 0.44556093215942383 seconds
+dio: 0.5206763744354248 seconds
+crepe-tiny: 0.7201855182647705 seconds
+mangio-crepe-tiny: 0.8618996143341064 seconds
+crepe: 1.4000129699707031 seconds
+mangio-crepe: 1.8660578727722168 seconds
