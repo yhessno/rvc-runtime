@@ -326,24 +326,19 @@ def cli_infer(com):
         crepe_hop_length,
     )
     if "Success." in conversion_data[0]:
-        print(
-            "Mangio-RVC-Fork Infer-CLI: Inference succeeded. Writing to %s/%s..."
-            % ("audio-outputs", output_file_name)
-        )
+        print(f"Mangio-RVC-Fork Infer-CLI: Inference succeeded. Writing to {output_file_name}")
         wavfile.write(
-            "%s/%s" % ("audio-outputs", output_file_name),
+            output_file_name,
             conversion_data[1][0],
             conversion_data[1][1],
         )
-        print(
-            "Mangio-RVC-Fork Infer-CLI: Finished! Saved output to %s/%s"
-            % ("audio-outputs", output_file_name)
-        )
+        print(f"Mangio-RVC-Fork Infer-CLI: Finished! Saved output to {output_file_name}")
     else:
         print("Mangio-RVC-Fork Infer-CLI: Inference failed. Here's the traceback: ")
         print(conversion_data[0])
 
-cli_infer("Spongebob.pth audios/out.wav audios/spongebob_out.wav logs/added_IVF6717_Flat_nprobe_1_Spongebob_v2.index 0 8 harvest 120 3 0 1 0.78 0.33 false")
+if __name__ == "main":
+    cli_infer("Spongebob.pth audios/out.wav audios/spongebob_out.wav logs/added_IVF6717_Flat_nprobe_1_Spongebob_v2.index 0 8 harvest 120 3 0 1 0.78 0.33 false")
 
 # hop_size = 120
 # # sampling_rate = 40000  # Sample rate
