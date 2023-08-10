@@ -34,4 +34,7 @@ RUN apt-get install -y libsndfile1 libssl3 ffmpeg
 # Install python dependencies
 RUN pip install -r requirements.txt
 
+# # Expose ports
+# EXPOSE 8001
+
 CMD python main.py
