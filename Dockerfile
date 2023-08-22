@@ -3,7 +3,7 @@ FROM nvidia/cuda:11.7.1-cudnn8-runtime-ubuntu22.04
 # Prevent interactive prompts during apt-get
 ENV DEBIAN_FRONTEND="noninteractive"
 
-# Install dependenceis to add PPAs
+# Install dependencies to add PPAs
 RUN apt-get update && \
     apt-get install -y software-properties-common && \
     apt-get clean && \
